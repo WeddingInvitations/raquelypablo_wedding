@@ -1,0 +1,637 @@
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Estilos para el texto */
+body.custom-body {
+    font-family: "Parkinsans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 50px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
+    font-size: 17px;
+}
+
+
+/* PORTADA */
+
+header {
+    background-size: contain;
+    background-image: url('images/header.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        background-size: cover;
+        background-image: url('images/header.jpeg');
+        height: 400px;
+    }
+}
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+a:hover {
+    color: #8f746c;
+    ;
+    /* Cambia el color al pasar el ratón sobre el botón */
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #BBAB9B;
+    /* Color de la línea */
+    animation: aparecerLinea 10s forwards;
+    /* Animación para hacer aparecer la línea */
+}
+
+@keyframes aparecerLinea {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+#btn-lang {
+    background-color: #4D5240;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    padding: 7px 7px;
+    /* Espaciado interno */
+    font-size: 15px;
+    /* Tamaño del texto */
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s, transform 0.2s;
+    /* Animaciones suaves */
+}
+
+#btn-lang:hover {
+    background-color: #4D5240;
+    /* Color al pasar el cursor */
+    transform: scale(1.05);
+    /* Agranda un poco el botón */
+}
+
+#btn-lang:active {
+    background-color: #4D5240;
+    /* Color al hacer clic */
+    transform: scale(0.95);
+    /* Reduce un poco el tamaño */
+}
+
+.element {
+    max-width: 4%;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .element {
+        max-width: 12%;
+    }
+}
+
+.cuenta-regresiva {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    color: #c0a28f;
+}
+
+#cuenta-atras {
+    display: flex;
+    align-items: center;
+}
+
+.tiempo {
+    text-align: center;
+    margin: 0 10px;
+    font-size: 1em;
+}
+
+.barra {
+    font-size: 1em;
+    color: #666;
+    margin: 0 10px;
+}
+
+/* SECTIONS */
+
+
+.flower-border-r {
+    position: relative;
+    margin: auto;
+    object-fit: cover;
+    width: 90%;
+}
+
+.flower-border-l {
+    position: relative;
+    /* Permite posicionar la imagen con precisión */
+    right: 20px;
+    /* Pegada al margen derecho */
+    object-fit: cover;
+    /* Asegura que la imagen se ajuste bien a su contenedor */
+    z-index: -1;
+    /* Envía la imagen detrás del contenido principal */
+}
+
+
+
+/* BIENVENIDOS */
+
+#bienvenidos {
+    text-align: center;
+    padding: 20px;
+}
+
+#bienvenidos h1 {
+    color: #aca99f;
+    font-family: "Oooh Baby";
+    font-size: 40px;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+    letter-spacing: 2px;
+}
+
+.bienvenidos-texto p {
+    text-align: center;
+    padding: 20px;
+    padding: 10px;
+    /* Ajusta el relleno según sea necesario */
+}
+
+.bienvenidos-texto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Google Maps */
+#mapDiv {
+    height: 300px;
+}
+
+
+
+/* ITINERARIO */
+
+.timeline {
+    position: relative;
+    margin: 50px 0;
+    padding-left: 40px;
+    border-left: 3px solid #aca99f;
+    margin-left: 660px;
+}
+
+.event {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-out;
+}
+
+.event:before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    background-color: #BBAB9B;
+    border-radius: 50%;
+}
+
+.event .time {
+    width: 100px;
+}
+
+.event .icon {
+    margin-right: 20px;
+}
+
+.event .icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.event .description {
+    font-size: 0.8em;
+    color: #555;
+}
+
+.event .description:hover {
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+
+/* Animation logic */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.itinerario img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.element-crew {
+    max-width: 3%;
+}
+
+.element {
+    max-width: 4%;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .element {
+        max-width: 12%;
+    }
+
+    .element-crew {
+        max-width: 9%;
+    }
+
+    .timeline {
+        position: relative;
+        margin: 50px 0;
+        padding-left: 40px;
+        border-left: 3px solid #7b6b48;
+    }
+}
+
+
+
+
+
+
+/* ASISTENCIA */
+
+#asistencia {
+    text-align: center;
+    padding: 20px;
+}
+
+#asistencia h1 {
+    color: #aca99f;
+    font-family: "Oooh Baby";
+    font-size: 40px;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+    letter-spacing: 2px;
+}
+
+.asistencia-texto p {
+    text-align: center;
+    padding: 20px;
+    padding: 10px;
+    /* Ajusta el relleno según sea necesario */
+}
+
+
+
+#nombre,
+#telefono,
+#alergias {
+    position: relative;
+    width: 300px;
+    border: none;
+    border-radius: 26px;
+    background: #aca99f;
+    font-size: revert;
+    margin: 10px;
+}
+
+
+#acompanado {
+    position: relative;
+}
+
+
+.form-container-asist {
+    border-radius: 40px;
+    padding: 20px 20px;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .form-container-asist {
+        padding: 20px 0;
+    }
+}
+
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    z-index: 1000;
+    width: max-content;
+}
+
+@media only screen and (max-width: 600px) {
+    #popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        z-index: 1000;
+        width: 350px;
+    }
+}
+
+
+#button {
+    color: rgba(100, 136, 106, 0.68);
+}
+
+#closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 20px;
+    /* Ajusta el tamaño según sea necesario */
+    height: 20px;
+    /* Ajusta el tamaño según sea necesario */
+}
+
+/* Estilos para el modal del pop-up */
+.modal {
+    display: none;
+    /* Inicialmente oculto */
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo oscuro semitransparente */
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* CONTACTO */
+.rrss {
+    width: 30px; /* Ancho del icono */
+    height: auto; /* Altura del icono */
+    margin-bottom: 5px;
+}
+.contacto p {
+    margin: 0; /* Elimina el margen predeterminado del párrafo */
+    text-align: justify;
+}
+
+
+@media (max-width: 768px) {
+    .contacto {
+        padding: 15px;
+        display: inline-flex;
+        flex-direction: column;
+    }
+}
+
+.contacto-info {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+.contacto-info a {
+    display: inline-block;
+    background-color: #25d366; /* Color característico de WhatsApp */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+  
+  .contacto-info a:hover {
+    background-color: #1ebe56; /* Más oscuro al pasar el ratón */
+  }
+
+/* INFORMACIÓN DE INTERÉS */
+
+#info_interes {
+    text-align: center;
+    padding: 20px;
+}
+
+.info-texto p {
+    text-align: center;
+    padding: 20px;
+    padding: 10px; /* Ajusta el relleno según sea necesario */
+}
+
+/* GENERAL INFORMATION */
+
+#general-information {
+    text-align: center;
+    padding: 20px;
+}
+
+#general-information h1 {
+    color: #aca99f;
+    font-family: "Oooh Baby";
+    font-size: 40px;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+    letter-spacing: 2px;
+}
+
+.information-texto p {
+    text-align: center;
+    padding: 20px;
+    padding: 10px;
+    /* Ajusta el relleno según sea necesario */
+}
+
+
+/* MÚSICA */
+
+#musica {
+    text-align: center;
+    padding: 20px;
+}
+
+#musica h1 {
+    color: #aca99f;
+    font-family: "Oooh Baby";
+    font-size: 40px;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+    letter-spacing: 2px;
+}
+
+.musica-texto p {
+    text-align: center;
+    padding: 20px;
+    padding: 10px;
+    /* Ajusta el relleno según sea necesario */
+}
+
+/* REGALOS */
+
+#regalos {
+    text-align: center;
+    padding: 20px;
+}
+
+#regalos h1 {
+    color: #aca99f;
+    font-family: "Oooh Baby";
+    font-size: 40px;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+    letter-spacing: 2px;
+}
+
+.regalos-texto p {
+    text-align: center;
+    padding: 20px;
+    padding: 10px; /* Ajusta el relleno según sea necesario */
+}
+
+.plain-text {
+    color: inherit;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+/* FOOTER */
+.pre-footer {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .pre-footer {
+        max-width: 100%;
+    }
+}
+
+footer {
+    background-color: #aca99f;
+    padding: 10px;
+    color: #f5f0ef;
+    ;
+}
+
+.footer-content p {
+    text-align: center;
+    font-weight: 200;
+}

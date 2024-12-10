@@ -24,6 +24,7 @@ jobs:
         run: |
           gcloud services enable appengine.googleapis.com
           gcloud services enable cloudbuild.googleapis.com
+          gcloud services enable appengineadmin.googleapis.com
         env:
           CLOUDSDK_CORE_DISABLE_PROMPTS: 1
 
