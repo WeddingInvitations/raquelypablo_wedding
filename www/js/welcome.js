@@ -33,8 +33,8 @@ const x = setInterval(function() {
 // Función para mostrar Google Maps
 function initMap() {
   const myLatLng = {
-    lat: 39.5502453707605,
-    lng: -0.5390532750259345
+    lat: 28.389545798636565,
+    lng: -16.5337613635931
   };
   var map = new google.maps.Map(document.getElementById("mapDiv"), {
     zoom: 11,
@@ -46,7 +46,7 @@ function initMap() {
   new google.maps.Marker ({
     position: myLatLng,
     map,
-    title: "Mas de alzedo"
+    title: "Finca San Miguel"
   });
 }
 
