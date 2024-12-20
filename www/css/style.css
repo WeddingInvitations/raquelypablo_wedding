@@ -201,9 +201,9 @@ nav::after {
 
 #bienvenidos h1 {
     color: #aca99f;
-    font-family: "Oooh Baby";
-    font-size: 40px;
-    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
     letter-spacing: 2px;
 }
 
@@ -486,12 +486,16 @@ nav::after {
 
 /* CONTACTO */
 .rrss {
-    width: 30px; /* Ancho del icono */
-    height: auto; /* Altura del icono */
+    width: 30px;
+    /* Ancho del icono */
+    height: auto;
+    /* Altura del icono */
     margin-bottom: 5px;
 }
+
 .contacto p {
-    margin: 0; /* Elimina el margen predeterminado del párrafo */
+    margin: 0;
+    /* Elimina el margen predeterminado del párrafo */
     text-align: justify;
 }
 
@@ -507,11 +511,12 @@ nav::after {
 .contacto-info {
     text-align: center;
     margin: 20px 0;
-  }
-  
+}
+
 .contacto-info a {
     display: inline-block;
-    background-color: #25d366; /* Color característico de WhatsApp */
+    background-color: #25d366;
+    /* Color característico de WhatsApp */
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -519,10 +524,11 @@ nav::after {
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
-  
-  .contacto-info a:hover {
-    background-color: #1ebe56; /* Más oscuro al pasar el ratón */
-  }
+
+.contacto-info a:hover {
+    background-color: #1ebe56;
+    /* Más oscuro al pasar el ratón */
+}
 
 /* INFORMACIÓN DE INTERÉS */
 
@@ -534,7 +540,8 @@ nav::after {
 .info-texto p {
     text-align: center;
     padding: 20px;
-    padding: 10px; /* Ajusta el relleno según sea necesario */
+    padding: 10px;
+    /* Ajusta el relleno según sea necesario */
 }
 
 /* GENERAL INFORMATION */
@@ -600,7 +607,8 @@ nav::after {
 .regalos-texto p {
     text-align: center;
     padding: 20px;
-    padding: 10px; /* Ajusta el relleno según sea necesario */
+    padding: 10px;
+    /* Ajusta el relleno según sea necesario */
 }
 
 .plain-text {
