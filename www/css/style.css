@@ -612,6 +612,13 @@ nav::after {
     padding: 10px; /* Ajusta el relleno según sea necesario */
 }
 
+.vestimenta-texto img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px;
+}
+
 
 
 /* REGALOS */
