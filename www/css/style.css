@@ -348,9 +348,9 @@ nav::after {
 
 #asistencia h1 {
     color: #aca99f;
-    font-family: "Oooh Baby";
-    font-size: 40px;
-    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
     letter-spacing: 2px;
 }
 
@@ -553,9 +553,9 @@ nav::after {
 
 #general-information h1 {
     color: #aca99f;
-    font-family: "Oooh Baby";
-    font-size: 40px;
-    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
     letter-spacing: 2px;
 }
 
