@@ -515,7 +515,7 @@ nav::after {
 
 .contacto-info a {
     display: inline-block;
-    background-color: #25d366;
+    background-color: #457556;
     /* Color característico de WhatsApp */
     color: white;
     padding: 10px 20px;
@@ -526,7 +526,7 @@ nav::after {
 }
 
 .contacto-info a:hover {
-    background-color: #1ebe56;
+    background-color: #457556;
     /* Más oscuro al pasar el ratón */
 }
 
