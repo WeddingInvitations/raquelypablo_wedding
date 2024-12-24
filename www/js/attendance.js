@@ -189,7 +189,7 @@ document.getElementById('attendance-form').addEventListener("submit", function (
       const emailData = {
         nm: name,
         ph: phone,
-        att: attendance,
+        // att: attendance,
         ale: allergies,
         // gue: acompanantes,
         bus: bus
