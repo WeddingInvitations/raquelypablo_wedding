@@ -175,7 +175,7 @@ document.getElementById('attendance-form').addEventListener("submit", function (
   addDoc(docRef, {
     Nombre: name,
     Teléfono: phone,
-    Asistencia: attendance,
+    // Asistencia: attendance,
     Alergias: allergies,
     // Acompañantes: acompanantes,
     Bus: bus
