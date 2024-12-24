@@ -3,12 +3,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebas
 // import { enableLogging } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB1gDQeGjezgOPcXOJlW2oS3QjfQZgEAk0",
-  authDomain: "mariviymariowedding.firebaseapp.com",
-  projectId: "mariviymariowedding",
-  storageBucket: "mariviymariowedding.appspot.com",
-  messagingSenderId: "1016540465642",
-  appId: "1:1016540465642:web:50c51a7400e58e84998a93"
+  apiKey: "AIzaSyB6A1C7WKLCQuZTpKQebyjB5rQaZC8unLk",
+  authDomain: "raquelypablowedding.firebaseapp.com",
+  projectId: "raquelypablowedding",
+  storageBucket: "raquelypablowedding.firebasestorage.app",
+  messagingSenderId: "256521654429",
+  appId: "1:256521654429:web:12e43b306de23c2876c474",
+  measurementId: "G-H9XPVZHRVN"
 };
 
 
