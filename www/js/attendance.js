@@ -12,12 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // var checkboxSi = document.getElementById("acompanadoSi");
   var busNo = document.getElementById("busNo");
   var busSi = document.getElementById("busSi");
+  var adulto = document.getElementById("adulto");
+  var nino = document.getElementById("nino");
 
 
   // checkboxSi.addEventListener("change", habilitarCampoAcompanante);
   // checkboxNo.addEventListener("change", habilitarCampoAcompanante);
   busSi.addEventListener("change", habilitarBus);
   busNo.addEventListener("change", habilitarBus);
+  adulto.addEventListener("change", habilitarTipo);
+  nino.addEventListener("change", habilitarTipo);
   
   // Función para habilitar el check acom y abrir pop up
   // function habilitarCampoAcompanante(event) {
@@ -43,6 +47,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function habilitarTipo(event) {
+    // Desmarcar el otro checkbox
+    if (nino.checked && event.target === adulto) {
+      nino.checked = false;
+    } else if (adulto.checked && event.target === nino) {
+      adulto.checked = false;
+    }
+  }
     
   // Función para abrir el pop-up al hacer clic en "Sí, voy acompañado"
   function openPopup() {
