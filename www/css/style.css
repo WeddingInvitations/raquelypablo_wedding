@@ -196,7 +196,7 @@ nav::after {
 #play-button {
     width: 60px;
     height: 60px;
-    background-color: #f78f1e;
+    background-color: #fbc778;
     /* Color del botón */
     border: none;
     border-radius: 50%;
@@ -213,7 +213,7 @@ nav::after {
 }
 
 #play-button:hover {
-    background-color: #e07d1c;
+    background-color: #fbc778;
     /* Color al pasar el cursor */
 }
 
