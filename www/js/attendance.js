@@ -155,6 +155,14 @@ document.getElementById('attendance-form').addEventListener("submit", function (
   var phone = document.getElementById("telefono").value;
   var allergies = document.getElementById("alergias").value;
   // var attendance = document.getElementById("acompanadoSi").checked;
+  var type = document.getElementById("adulto").checked;
+
+  if (type) {
+    type = "Adulto";
+  } else {
+    type = "Niño";
+  }
+
   var bus = document.getElementById("busSi").checked;
   
   // Crear un array para almacenar los acompañantes
@@ -189,6 +197,7 @@ document.getElementById('attendance-form').addEventListener("submit", function (
     Teléfono: phone,
     // Asistencia: attendance,
     Alergias: allergies,
+    Type: type,
     // Acompañantes: acompanantes,
     Bus: bus
   })
@@ -203,6 +212,7 @@ document.getElementById('attendance-form').addEventListener("submit", function (
         ph: phone,
         // att: attendance,
         ale: allergies,
+        type: type,
         // gue: acompanantes,
         bus: bus
       };
@@ -221,6 +231,9 @@ document.getElementById('attendance-form').addEventListener("submit", function (
   // document.getElementById("acompanadoNo").checked = "";
   document.getElementById("busSi").checked = "";
   document.getElementById("busNo").checked = "";
+  document.getElementById("adulto").checked = "";
+  document.getElementById("nino").checked = "";
+
 });
 
 
