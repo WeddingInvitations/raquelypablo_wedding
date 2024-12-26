@@ -1,8 +1,19 @@
+// Music
+
+const playButton = document.getElementById('play-button');
+const audio = document.getElementById('background-music');
+
+playButton.addEventListener('click', () => {
+  audio.play();
+  playButton.style.display = 'none'; // Oculta el botón después de hacer clic
+});
+
+
 // Establece la fecha objetivo
 const fechaObjetivo = new Date("May 31, 2025 13:00:00").getTime();
 
 // Actualiza la cuenta regresiva cada 1 segundo
-const x = setInterval(function() {
+const x = setInterval(function () {
 
   // Obtén la fecha y hora actual
   const ahora = new Date().getTime();
@@ -43,7 +54,7 @@ function initMap() {
     zoomControl: true,
     streetViewControl: false
   });
-  new google.maps.Marker ({
+  new google.maps.Marker({
     position: myLatLng,
     map,
     title: "Finca San Miguel"
@@ -52,7 +63,7 @@ function initMap() {
 
 
 // Itinerario
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   const events = document.querySelectorAll('.event');
   const windowHeight = window.innerHeight;
   const triggerPoint = windowHeight * 0.85;
