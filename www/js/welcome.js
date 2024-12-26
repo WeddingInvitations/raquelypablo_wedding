@@ -1,14 +1,3 @@
-// Music
-
-const playButton = document.getElementById('play-button');
-const audio = document.getElementById('background-music');
-
-playButton.addEventListener('click', () => {
-  audio.play();
-  playButton.style.display = 'none'; // Oculta el botón después de hacer clic
-});
-
-
 // Establece la fecha objetivo
 const fechaObjetivo = new Date("May 31, 2025 13:00:00").getTime();
 
