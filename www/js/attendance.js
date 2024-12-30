@@ -227,12 +227,12 @@ document.getElementById('attendance-form').addEventListener("submit", function (
   document.getElementById("nombre").value = "";
   document.getElementById("telefono").value = "";
   document.getElementById("alergias").value = "";
-  // document.getElementById("acompanadoSi").checked = "";
-  // document.getElementById("acompanadoNo").checked = "";
+  document.getElementById("acompanadoSi").checked = "";
+  document.getElementById("acompanadoNo").checked = "";
   document.getElementById("busSi").checked = "";
   document.getElementById("busNo").checked = "";
-  document.getElementById("adulto").checked = "";
-  document.getElementById("nino").checked = "";
+  // document.getElementById("adulto").checked = "";
+  // document.getElementById("nino").checked = "";
 
 });
 
