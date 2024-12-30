@@ -210,10 +210,10 @@ document.getElementById('attendance-form').addEventListener("submit", function (
       const emailData = {
         nm: name,
         ph: phone,
-        // att: attendance,
+        att: attendance,
         ale: allergies,
-        type: type,
-        // gue: acompanantes,
+        // type: type,
+        gue: acompanantes,
         bus: bus
       };
       enviarEmail(emailData);
