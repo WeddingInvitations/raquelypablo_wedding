@@ -195,10 +195,10 @@ document.getElementById('attendance-form').addEventListener("submit", function (
   addDoc(docRef, {
     Nombre: name,
     Teléfono: phone,
-    // Asistencia: attendance,
+    Asistencia: attendance,
     Alergias: allergies,
-    Type: type,
-    // Acompañantes: acompanantes,
+    // Type: type,
+    Acompañantes: acompanantes,
     Bus: bus
   })
     .then(function (docRef) {
