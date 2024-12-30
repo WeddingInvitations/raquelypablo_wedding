@@ -8,35 +8,35 @@ const inputFields = document.querySelectorAll(".form-group input"); // Obtén to
 // Esperar a que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
   // Seleccionar los elementos después de que el DOM esté cargado
-  // var checkboxNo = document.getElementById("acompanadoNo");
-  // var checkboxSi = document.getElementById("acompanadoSi");
+  var checkboxNo = document.getElementById("acompanadoNo");
+  var checkboxSi = document.getElementById("acompanadoSi");
   var busNo = document.getElementById("busNo");
   var busSi = document.getElementById("busSi");
-  var adulto = document.getElementById("adulto");
-  var nino = document.getElementById("nino");
+  // var adulto = document.getElementById("adulto");
+  // var nino = document.getElementById("nino");
 
 
-  // checkboxSi.addEventListener("change", habilitarCampoAcompanante);
-  // checkboxNo.addEventListener("change", habilitarCampoAcompanante);
+  checkboxSi.addEventListener("change", habilitarCampoAcompanante);
+  checkboxNo.addEventListener("change", habilitarCampoAcompanante);
   busSi.addEventListener("change", habilitarBus);
   busNo.addEventListener("change", habilitarBus);
-  adulto.addEventListener("change", habilitarTipo);
-  nino.addEventListener("change", habilitarTipo);
-  
-  // Función para habilitar el check acom y abrir pop up
-  // function habilitarCampoAcompanante(event) {
-  //   // Desmarcar el otro checkbox
-  //   if (checkboxNo.checked && event.target === checkboxSi) {
-  //     checkboxNo.checked = false;
-  //   } else if (checkboxSi.checked && event.target === checkboxNo) {
-  //     checkboxSi.checked = false;
-  //   }
+  // adulto.addEventListener("change", habilitarTipo);
+  // nino.addEventListener("change", habilitarTipo);
 
-  //   // Limpiar el campo si 'acompanado' es falso
-  //   if (checkboxSi.checked && event.target === checkboxSi) {
-  //     openPopup();
-  //   }
-  // }
+  // Función para habilitar el check acom y abrir pop up
+  function habilitarCampoAcompanante(event) {
+    // Desmarcar el otro checkbox
+    if (checkboxNo.checked && event.target === checkboxSi) {
+      checkboxNo.checked = false;
+    } else if (checkboxSi.checked && event.target === checkboxNo) {
+      checkboxSi.checked = false;
+    }
+
+    // Limpiar el campo si 'acompanado' es falso
+    if (checkboxSi.checked && event.target === checkboxSi) {
+      openPopup();
+    }
+  }
 
   function habilitarBus(event) {
     // Desmarcar el otro checkbox
@@ -47,15 +47,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function habilitarTipo(event) {
-    // Desmarcar el otro checkbox
-    if (nino.checked && event.target === adulto) {
-      nino.checked = false;
-    } else if (adulto.checked && event.target === nino) {
-      adulto.checked = false;
-    }
-  }
-    
+  // function habilitarTipo(event) {
+  //   // Desmarcar el otro checkbox
+  //   if (nino.checked && event.target === adulto) {
+  //     nino.checked = false;
+  //   } else if (adulto.checked && event.target === nino) {
+  //     adulto.checked = false;
+  //   }
+  // }
+
   // Función para abrir el pop-up al hacer clic en "Sí, voy acompañado"
   function openPopup() {
     var popup = document.getElementById('popup');
@@ -79,10 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   //Función para añadir acompañantes
-  // var addButton = document.getElementById('addAcompananteButton');
-  // if (addButton) {
-  //   addButton.addEventListener("click", addAcompanante);
-  // }
+  var addButton = document.getElementById('addAcompananteButton');
+  if (addButton) {
+    addButton.addEventListener("click", addAcompanante);
+  }
 });
 
 
@@ -99,51 +99,51 @@ function closePopup() {
   overlay.style.display = 'none';
 }
 
-// function addAcompanante() {
-//   // Obtén el contenedor en el que agregarás la nueva línea
-//   var popupContent = document.getElementById('accompaniments-list');
+function addAcompanante() {
+  // Obtén el contenedor en el que agregarás la nueva línea
+  var popupContent = document.getElementById('accompaniments-list');
 
-//   // Crea un nuevo elemento de párrafo (p)
-//   var nuevoParrafo = document.createElement('p');
+  // Crea un nuevo elemento de párrafo (p)
+  var nuevoParrafo = document.createElement('p');
 
-//   //Generar único id por fila de acompañante
-//   var uniqueId = generateUniqueId();
+  //Generar único id por fila de acompañante
+  var uniqueId = generateUniqueId();
 
-//   // Añade campos para nombre, tipo y alergias
-//   nuevoParrafo.innerHTML = `
-//         <div class="acompanante">
-//           <input type="text" placeholder="Nombre del Acompañante" class="name">
-//           <select class="type" name="tipo_acompanante[]">
-//             <option value="adulto">Adulto</option>
-//             <option value="nino">Niño</option>
-//           </select>
-//           <input type="text" placeholder="Alergias" class="allergies">
-//           <button id="deleteAcompananteButton">Borrar Acompañante</button>
-//         </div>
-//         `;
+  // Añade campos para nombre, tipo y alergias
+  nuevoParrafo.innerHTML = `
+        <div class="acompanante">
+          <input type="text" placeholder="Nombre del Acompañante" class="name">
+          <select class="type" name="tipo_acompanante[]">
+            <option value="adulto">Adulto</option>
+            <option value="nino">Niño</option>
+          </select>
+          <input type="text" placeholder="Alergias" class="allergies">
+          <button id="deleteAcompananteButton">Borrar Acompañante</button>
+        </div>
+        `;
 
-//   // Agrega el nuevo párrafo al contenido del pop-up
-//   popupContent.appendChild(nuevoParrafo);
+  // Agrega el nuevo párrafo al contenido del pop-up
+  popupContent.appendChild(nuevoParrafo);
 
-//   // Eliminar acompañantes
-//   var rmButton = nuevoParrafo.querySelector('#deleteAcompananteButton');
-//   if (rmButton) {
-//     rmButton.addEventListener("click", function() {
-//       deleteAcompanante(nuevoParrafo);
-//     });
-//   }
-// }
+  // Eliminar acompañantes
+  var rmButton = nuevoParrafo.querySelector('#deleteAcompananteButton');
+  if (rmButton) {
+    rmButton.addEventListener("click", function () {
+      deleteAcompanante(nuevoParrafo);
+    });
+  }
+}
 
-// function deleteAcompanante(btn) {
-//   // Obtén el elemento padre (la línea de acompañante) del botón que fue clicado
-//   var acompananteContainer = btn;
+function deleteAcompanante(btn) {
+  // Obtén el elemento padre (la línea de acompañante) del botón que fue clicado
+  var acompananteContainer = btn;
 
-//   // Verifica si hay al menos una línea de acompañante para eliminar
-//   if (acompananteContainer) {
-//     // Elimina la línea de acompañante específica
-//     acompananteContainer.parentNode.removeChild(acompananteContainer);
-//   }
-// }
+  // Verifica si hay al menos una línea de acompañante para eliminar
+  if (acompananteContainer) {
+    // Elimina la línea de acompañante específica
+    acompananteContainer.parentNode.removeChild(acompananteContainer);
+  }
+}
 
 
 // Función para guardar en firestore los datos
@@ -154,40 +154,40 @@ document.getElementById('attendance-form').addEventListener("submit", function (
   var name = document.getElementById("nombre").value;
   var phone = document.getElementById("telefono").value;
   var allergies = document.getElementById("alergias").value;
-  // var attendance = document.getElementById("acompanadoSi").checked;
-  var type = document.getElementById("adulto").checked;
+  var attendance = document.getElementById("acompanadoSi").checked;
+  // var type = document.getElementById("adulto").checked;
 
-  if (type) {
-    type = "Adulto";
-  } else {
-    type = "Niño";
-  }
+  // if (type) {
+  //   type = "Adulto";
+  // } else {
+  //   type = "Niño";
+  // }
 
   var bus = document.getElementById("busSi").checked;
-  
+
   // Crear un array para almacenar los acompañantes
-  // var acompanantes = [];
+  var acompanantes = [];
 
   // Si el checkbox de acompañado está marcado, agregar el acompañante al array
-  // if (attendance) {
+  if (attendance) {
 
-  //   var acompananteElements = document.getElementsByClassName("acompanante");
+    var acompananteElements = document.getElementsByClassName("acompanante");
 
-  //   for (var i = 0; i < acompananteElements.length; i++) {
-  //     var acompananteElement = acompananteElements[i];
-  //     // Obtener los valores de los campos del acompañante actual
-  //     var acompanante = {
-  //       Nombre: acompananteElement.querySelector(".name").value,
-  //       TipoInvitado: acompananteElement.querySelector(".type").value,
-  //       Alergias: acompananteElement.querySelector(".allergies").value
-  //     };
+    for (var i = 0; i < acompananteElements.length; i++) {
+      var acompananteElement = acompananteElements[i];
+      // Obtener los valores de los campos del acompañante actual
+      var acompanante = {
+        Nombre: acompananteElement.querySelector(".name").value,
+        TipoInvitado: acompananteElement.querySelector(".type").value,
+        Alergias: acompananteElement.querySelector(".allergies").value
+      };
 
-  //     // acompanantes.push(acompanante);
-  //     acompanantes.push(Object.assign({}, acompanante));
+      // acompanantes.push(acompanante);
+      acompanantes.push(Object.assign({}, acompanante));
 
-    // }
+    }
 
-  // }
+  }
 
   // Dentro de la colección principal, obtén una referencia a la subcolección "attendance"
   const docRef = collection(db, "attendance");
@@ -278,11 +278,11 @@ async function enviarEmail(emailData) {
   // Enviar los datos al servidor
   try {
     const response = await fetch('https://us-central1-raquelypablowedding.cloudfunctions.net/enviarEmail', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(emailData)
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(emailData)
     });
 
     const data = await response.json();
