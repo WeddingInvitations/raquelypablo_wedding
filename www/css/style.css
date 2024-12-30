@@ -256,11 +256,19 @@ audio {
 }
 
 .bienvenidos-texto img {
-    max-width: 60%;
+    max-width: 20%;
     height: auto;
     border-radius: 10px;
     margin: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+    .bienvenidos-texto img {
+        max-width: 60%;
+    }
+}
+
+
 
 /* Google Maps */
 #mapDiv {
@@ -720,10 +728,16 @@ audio {
 }
 
 .vestimenta-texto img {
-    max-width: 40%;
+    max-width: 20%;
     height: auto;
     border-radius: 10px;
     margin: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .vestimenta-texto img {
+        max-width: 60%;
+    }
 }
 
 
